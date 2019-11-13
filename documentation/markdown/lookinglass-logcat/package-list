@@ -1,0 +1,5 @@
+$dokka.format:markdown
+$dokka.linkExtension:md
+
+moe.aoramd.lookinglass.log
+moe.aoramd.lookinglass.log.printer

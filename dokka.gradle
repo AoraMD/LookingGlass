@@ -1,0 +1,11 @@
+apply plugin: 'org.jetbrains.dokka'
+
+dokka {
+    outputFormat = 'markdown'
+    outputDirectory = "$rootDir/documentation/markdown"
+}
+
+task dokkaJavadoc(type: dokka.getClass()) {
+    outputFormat = "javadoc"
+    outputDirectory = "$rootDir/documentation/javadoc/${project.name}"
+}

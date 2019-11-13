@@ -1,0 +1,30 @@
+apply plugin: 'maven'
+
+ext {
+    maven_group_id = "moe.aoramd.lookinglass"
+    maven_artifact_id = project.name
+    maven_version = android.defaultConfig.versionName
+}
+
+uploadArchives {
+
+    repositories.mavenDeployer {
+
+        repository(url: maven_repository_directory)
+
+        pom.project {
+            groupId maven_group_id
+            artifactId maven_artifact_id
+            version maven_version
+        }
+    }
+}
+
+task androidSourcesJar(type: Jar) {
+    archiveClassifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
+artifacts {
+    archives androidSourcesJar
+}
