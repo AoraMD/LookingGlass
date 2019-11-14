@@ -1,6 +1,6 @@
 # Looking Glass
 
-[Open Source License](resources/license.svg)
+![Open Source License](resources/license.svg)
 
 ## 简介
 
@@ -35,6 +35,16 @@ Looking Glass（镜之门）为 Android 开发模版代码封装的开发工具�
   实用控件整合
   
   [详见模块 README](lookinglass-widget/readme.md)
+
+## 独立模块
+
+*独立模块为 Looking Glass 工具包的一部分，但不集成到 lookinglass 主模块中*
+
+- Tale
+  
+  RecyclerView 数据类型视图互绑定工具
+  
+  [详见模块 Repository](https://github.com/AoraMD/Tale)
 
 ## 特殊模块列表
 
