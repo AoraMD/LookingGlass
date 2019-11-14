@@ -16,6 +16,9 @@ import android.widget.FrameLayout
  * @param context context
  * @param attrs 属性
  * @param defStyleAttr 默认主题属性
+ *
+ * @author M.D.
+ * @version 1
  */
 class SquareFrameLayout @JvmOverloads constructor(
     context: Context,
