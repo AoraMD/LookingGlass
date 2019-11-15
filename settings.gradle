@@ -1,2 +1,2 @@
-include ':sample', ':lookinglass-architecture', ':wonderland', ':lookinglass-widget', ':lookinglass-tools', ':lookinglass-core', ':lookinglass-logcat'
+include ':sample', ':lookinglass-architecture', ':wonderland', ':lookinglass-widget', ':lookinglass-tools', ':lookinglass-core', ':lookinglass-logcat', ':lookinglass'
 rootProject.name='Looking Glass'

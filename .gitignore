@@ -40,3 +40,6 @@ sample/
 
 # maven
 mavenargs.gradle
+
+# looking glass
+lookinglass/
