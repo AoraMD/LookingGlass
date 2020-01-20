@@ -21,7 +21,7 @@ abstract class BaseEventFragment : Fragment() {
      * @author M.D.
      * @since 1
      */
-    abstract val viewModel: BaseEventViewModel
+    protected abstract val viewModel: BaseEventViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
