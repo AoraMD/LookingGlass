@@ -4,6 +4,8 @@ package moe.aoramd.lookinglass.tools
 
 import android.content.Context
 import android.content.SharedPreferences
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * Shared Preferences 读写工具
@@ -97,6 +99,20 @@ object Box {
         }
 
         /**
+         * 通过协程读取 Int 类型数据
+         *
+         * @author M.D.
+         * @since 2
+         *
+         * @param key 数据键
+         * @param default 当数据不存在时的默认值，默认为 0
+         * @return 获取的数据
+         */
+        suspend fun int(key: String, default: Int = 0): Int = withContext(Dispatchers.IO) {
+            sharedPreferences.getInt(key, default)
+        }
+
+        /**
          * 读取 Float 类型数据
          *
          * @author M.D.
@@ -128,6 +144,20 @@ object Box {
         fun float(key: String, default: Float = 0F, result: (value: Float) -> Unit): Reader {
             result.invoke(sharedPreferences.getFloat(key, default))
             return this
+        }
+
+        /**
+         * 通过协程读取 Float 类型数据
+         *
+         * @author M.D.
+         * @since 2
+         *
+         * @param key 数据键
+         * @param default 当数据不存在时的默认值，默认为 0.0
+         * @return 获取的数据
+         */
+        suspend fun float(key: String, default: Float = 0F): Float = withContext(Dispatchers.IO) {
+            sharedPreferences.getFloat(key, default)
         }
 
         /**
@@ -169,6 +199,20 @@ object Box {
         }
 
         /**
+         * 通过协程读取 Boolean 类型数据
+         *
+         * @author M.D.
+         * @since 2
+         *
+         * @param key 数据键
+         * @param default 当数据不存在时的默认值，默认为 false
+         * @return 获取的数据
+         */
+        suspend fun boolean(key: String, default: Boolean = false): Boolean = withContext(Dispatchers.IO) {
+            sharedPreferences.getBoolean(key, default)
+        }
+
+        /**
          * 读取 Long 类型数据
          *
          * @author M.D.
@@ -203,6 +247,20 @@ object Box {
         }
 
         /**
+         * 通过协程读取 Long 类型数据
+         *
+         * @author M.D.
+         * @since 2
+         *
+         * @param key 数据键
+         * @param default 当数据不存在时的默认值，默认为 0
+         * @return 获取的数据
+         */
+        suspend fun long(key: String, default: Long = 0L): Long = withContext(Dispatchers.IO) {
+            sharedPreferences.getLong(key, default)
+        }
+
+        /**
          * 读取 String 类型数据
          *
          * @author M.D.
@@ -234,6 +292,20 @@ object Box {
         fun string(key: String, default: String? = null, result: (value: String?) -> Unit): Reader {
             result.invoke(sharedPreferences.getString(key, default))
             return this
+        }
+
+        /**
+         * 通过协程读取 String 类型数据
+         *
+         * @author M.D.
+         * @since 2
+         *
+         * @param key 数据键
+         * @param default 当数据不存在时的默认值，默认为 null
+         * @return 获取的数据
+         */
+        suspend fun string(key: String, default: String? = null): String? = withContext(Dispatchers.IO) {
+            sharedPreferences.getString(key, default)
         }
 
         /**
@@ -276,6 +348,20 @@ object Box {
         ): Reader {
             result.invoke(sharedPreferences.getStringSet(key, default) ?: setOf())
             return this
+        }
+
+        /**
+         * 通过协程读取 String Set 类型数据
+         *
+         * @author M.D.
+         * @since 2
+         *
+         * @param key 数据键
+         * @param default 当数据不存在时的默认值，默认为空 Set
+         * @return 获取的数据
+         */
+        suspend fun stringSet(key: String, default: Set<String> = setOf()): Set<String> = withContext(Dispatchers.IO) {
+            sharedPreferences.getStringSet(key, default) ?: setOf()
         }
 
         /**
@@ -357,7 +443,6 @@ object Box {
             fun onResult(value: T)
         }
     }
-
 
     /**
      * 实现链式调用的数据写入工具

@@ -24,3 +24,22 @@ M.D.
 **Return**
 工具自身，应用于链式调用
 
+`suspend fun stringSet(key: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, default: `[`Set`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`> = setOf()): `[`Set`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>`
+
+通过协程读取 String Set 类型数据
+
+### Parameters
+
+`key` - 数据键
+
+`default` - 当数据不存在时的默认值，默认为空 Set
+
+**Author**
+M.D.
+
+**Since**
+2
+
+**Return**
+获取的数据
+
